@@ -2,7 +2,7 @@ import express from 'express';
 import rateLimit from 'express-rate-limit';
 import cors from 'cors';
 import SimpleNodeLogger from 'simple-node-logger';
-import { groupsRouter, honorsRouter, videosRouter, videoRouter, xayoRouter } from './routes'
+import { groupsRouter, honorsRouter, videosRouter, videoRouter, xayoRouter, testsRouter } from './routes'
 import { measure } from './metrics';
 
 export const app = express();
@@ -32,6 +32,7 @@ app.use('/honors', honorsRouter, globalLimiter);
 app.use('/videos', videosRouter, globalLimiter);
 app.use('/video', videoRouter, globalLimiter);
 app.use('/user/xayo', xayoRouter, globalLimiter);
+app.use('/tests', testsRouter, globalLimiter);
 
 app.get('/', (request, response) => {
     response.status(200).json({ version: process.env.npm_package_version });
