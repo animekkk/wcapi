@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --experimental-specifier-resolution=node src/server.js"
+    "start": "node --experimental-loader=extensionless src/server.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "express-rate-limit": "^6.0.4",
+    "extensionless": "^1.4.5",
     "fs": "^0.0.1-security",
     "node-fetch": "^3.1.0",
     "redis": "^4.0.1",
